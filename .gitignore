@@ -1,0 +1,45 @@
+# ignore files with sensitive information
+config/secrets.yml
+config/database.yml
+.env
+scripts/qiime2_install.sh
+20260115_HN00265605_TAG_Report
+# ignore log files
+log/*.log
+# ignore temporary files
+tmp/*
+# ignore compiled assets
+public/assets/*
+# ignore node modules
+node_modules/
+vendor/bundle/
+# ignore IDE specific files
+.idea/
+.vscode/
+*.iml
+# ignore system files
+.DS_Store
+Thumbs.db
+# ignore coverage reports
+coverage/
+.nyc_output/
+# ignore build directories
+build/
+dist/
+# ignore package lock files
+package-lock.json
+yarn.lock
+.pnpm-lock.yaml
+# ignore test output
+test-output/
+reports/
+# ignore backup files
+*.bak
+*.swp
+*~
+# ignore compiled files
+*.class
+*.obj
+*.exe
+*.dll
+*.object
