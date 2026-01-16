@@ -1,0 +1,1 @@
+# Analysis of the amplicon sequence data for CJP phyllosphere with QIIME2.
