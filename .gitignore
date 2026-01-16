@@ -4,6 +4,10 @@ config/database.yml
 .env
 scripts/qiime2_install.sh
 20260115_HN00265605_TAG_Report
+md5sum.txt
+# ignore raw data files
+HN00265605.zip
+raw_data/*
 # ignore log files
 log/*.log
 # ignore temporary files
