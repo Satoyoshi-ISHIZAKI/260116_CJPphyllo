@@ -1,20 +1,26 @@
-#QC and inference of ASVs
+# QC and inference of ASVs
 
-##start docker container first
-#docker start qiime2.2024.02
-#docker exec -i -t qiime2.2024.02 /bin/bash
+## Workflow to this file:
+## 1. qiime2_install.sh
+## 2. make_manifest.sh
+## 3. import.sh
+## 4. trim.sh
+## 5. dada2_ITS.sh (this file)
 
-#change directory to your project folder beforehead
+## start docker container first
+# docker start qiime2.2024.02
+# docker exec -i -t qiime2.2024.02 /bin/bash
+# change directory to your project folder beforehand
 
-#make directory
-#mkdir Analysis/denoised
+# make directory
+# mkdir Analysis/denoised
 
-#perform QC and denoising using only forward reads
-##modify length to be trimmed and truncated according to your data quality
+# perform QC and denoising using only forward reads
+## Use the same trunc-len value as used for the previous data (see shCodes/qiime_231202_SugiJune.txt)
 qiime dada2 denoise-single \
   --i-demultiplexed-seqs Analysis/demux/trimmed_paired-end_ITS.qza \
   --p-trim-left 0 \
-  --p-trunc-len 246 \
+  --p-trunc-len 250 \
   --p-n-threads 0 \
   --o-representative-sequences Analysis/denoised/rep-seqs_ITS.qza \
   --o-table Analysis/denoised/table_ITS.qza \
