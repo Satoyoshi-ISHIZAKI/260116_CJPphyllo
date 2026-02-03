@@ -22,9 +22,11 @@ qiime dada2 denoise-single \
   --p-trim-left 0 \
   --p-trunc-len 250 \
   --p-n-threads 0 \
+  --p-retain-all-samples True \
   --o-representative-sequences Analysis/denoised/rep-seqs_ITS.qza \
   --o-table Analysis/denoised/table_ITS.qza \
-  --o-denoising-stats Analysis/denoised/denoising-stats_ITS.qza
+  --o-denoising-stats Analysis/denoised/denoising-stats_ITS.qza \
+  --o-base-transition-stats Analysis/denoised/base-transition-stats_ITS.qza
 
 qiime feature-table summarize \
     --i-table Analysis/denoised/table_ITS.qza \

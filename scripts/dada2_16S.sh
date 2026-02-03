@@ -45,9 +45,14 @@ qiime feature-table tabulate-seqs \
 
 #stats visualization
 qiime metadata tabulate \
-    --m-input-file Analysis/denoised/denoising-stats_16S.qza \
-    --o-visualization Analysis/denoised/denoising-stats_16S.qzv
+  --m-input-file Analysis/denoised/denoising-stats_16S.qza \
+  --o-visualization Analysis/denoised/denoising-stats_16S.qzv
 
 qiime tools export \
     --input-path Analysis/denoised/denoising-stats_16S.qza \
     --output-path Analysis/denoised/dada2_output_16S
+
+# base transition stats visualization
+qiime metadata tabulate \
+    --m-input-file Analysis/denoised/base-transition-stats_16S.qza \
+    --o-visualization Analysis/denoised/base-transition-stats_16S.qzv
