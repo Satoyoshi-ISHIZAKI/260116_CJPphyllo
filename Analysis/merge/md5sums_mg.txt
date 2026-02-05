@@ -1,0 +1,4 @@
+2d74f47d53a0c22315389c000999e0f7  seq_16S_mg.qza
+8530a7ddb80550c31a3b5a4caef0acb4  seq_ITS_mg.qza
+73e20e7885ecc5a447d42b1ce0d2d325  table_16S_mg.qza
+73e6af229ae42eda06a6b613942b20e4  table_ITS_mg.qza
