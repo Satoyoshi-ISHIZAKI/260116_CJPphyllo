@@ -29,18 +29,25 @@ qiime dada2 denoise-single \
   --o-base-transition-stats Analysis/denoised/base-transition-stats_ITS.qza
 
 qiime feature-table summarize \
-    --i-table Analysis/denoised/table_ITS.qza \
-    --o-visualization Analysis/denoised/table_ITS.qzv
+  --i-table Analysis/denoised/table_ITS.qza \
+  --o-summary Analysis/denoised/table_ITS.qzv \
+  --o-sample-frequencies Analysis/denoised/sample-frequencies_ITS.qza \
+  --o-feature-frequencies Analysis/denoised/asv-frequencies_ITS.qza
 
 qiime feature-table tabulate-seqs \
-    --i-data Analysis/denoised/rep-seqs_ITS.qza \
-    --o-visualization Analysis/denoised/rep-seqs_ITS.qzv
+  --i-data Analysis/denoised/rep-seqs_ITS.qza \
+  --m-metadata-file Analysis/denoised/asv-frequencies_ITS.qza \
+  --o-visualization Analysis/denoised/rep-seqs_ITS.qzv
 
 #stats visualization
 qiime metadata tabulate \
-    --m-input-file Analysis/denoised/denoising-stats_ITS.qza \
-    --o-visualization Analysis/denoised/denoising-stats_ITS.qzv
+  --m-input-file Analysis/denoised/denoising-stats_ITS.qza \
+  --o-visualization Analysis/denoised/denoising-stats_ITS.qzv
 
 qiime tools export \
     --input-path Analysis/denoised/denoising-stats_ITS.qza \
     --output-path Analysis/denoised/dada2_output_ITS
+# base transition stats visualization
+qiime metadata tabulate \
+    --m-input-file Analysis/denoised/base-transition-stats_ITS.qza \
+    --o-visualization Analysis/denoised/base-transition-stats_ITS.qzv

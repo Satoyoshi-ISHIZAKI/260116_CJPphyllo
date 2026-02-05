@@ -1,22 +1,30 @@
-#assign taxonomy to ASVs
+# assign taxonomy to ASVs
 
-##start docker container first
-#docker start qiime2.2024.10
-#docker exec -i -t qiime2.2024.10 /bin/bash
+## Workflow to this file:
+## 1. qiime2_install.sh
+## 2. make_manifest.sh
+## 3. import.sh
+## 4. trim.sh
+## 5. dada2_16S.sh
+## 6. taxomony_16S.sh (this file)
 
-#change directory to your project folder beforehead
+## start docker container first
+# docker start qiime2.2024.10
+# docker exec -i -t qiime2.2024.10 /bin/bash
 
-#make directory
-#mkdir Analysis/taxa
+# change directory to your project folder beforehand
 
-#used SILVA database and scikit-learn feature-classifier
-#cite:
-#Bokulich et al. (2018). Optimizing taxonomic classification of marker-gene amplicon sequences with QIIME 2’s q2-feature-classifier plugin.
-#Quast et al. (2012). The SILVA ribosomal RNA gene database project: improved data processing and web-based tools.
-#Robeson et al. (2021). RESCRIPt: reproducible sequence taxonomy reference database management.
+# make directory
+# mkdir Analysis/taxa
 
-#train a naive bayes classifier
-#do in a PC with a large computational power
+# used SILVA database and scikit-learn feature-classifier
+# cite:
+# Bokulich et al. (2018). Optimizing taxonomic classification of marker-gene amplicon sequences with QIIME 2’s q2-feature-classifier plugin.
+# Quast et al. (2012). The SILVA ribosomal RNA gene database project: improved data processing and web-based tools.
+# Robeson et al. (2021). RESCRIPt: reproducible sequence taxonomy reference database management.
+
+# train a naive bayes classifier
+# do in a PC with a large computational power
 qiime feature-classifier fit-classifier-naive-bayes \
     --i-reference-reads /data/SILVA_202410/silva-138-99-seqs-515-806.qza \
     --i-reference-taxonomy /data/SILVA_202410/silva-138-99-tax-515-806.qza \

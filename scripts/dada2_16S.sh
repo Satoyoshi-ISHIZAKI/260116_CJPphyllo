@@ -36,12 +36,15 @@ qiime dada2 denoise-paired \
     --o-base-transition-stats Analysis/denoised/base-transition-stats_16S.qza
 
 qiime feature-table summarize \
-    --i-table Analysis/denoised/table_16S.qza \
-    --o-visualization Analysis/denoised/table_16S.qzv
+  --i-table Analysis/denoised/table_16S.qza \
+  --o-summary Analysis/denoised/table_16S.qzv \
+  --o-sample-frequencies Analysis/denoised/sample-frequencies_16S.qza \
+  --o-feature-frequencies Analysis/denoised/asv-frequencies_16S.qza
 
 qiime feature-table tabulate-seqs \
-    --i-data Analysis/denoised/rep-seqs_16S.qza \
-    --o-visualization Analysis/denoised/rep-seqs_16S.qzv
+  --i-data Analysis/denoised/rep-seqs_16S.qza \
+  --m-metadata-file Analysis/denoised/asv-frequencies_16S.qza \
+  --o-visualization Analysis/denoised/rep-seqs_16S.qzv
 
 #stats visualization
 qiime metadata tabulate \
