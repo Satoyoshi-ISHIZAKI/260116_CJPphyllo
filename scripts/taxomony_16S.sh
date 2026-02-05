@@ -6,11 +6,14 @@
 ## 3. import.sh
 ## 4. trim.sh
 ## 5. dada2_16S.sh
-## 6. taxomony_16S.sh (this file)
+## 6. merge.sh
+## 7. filter_singltons.sh
+## 8. classifier_install.sh
+## 9. taxomony_16S.sh (this file)
 
 ## start docker container first
-# docker start qiime2.2024.10
-# docker exec -i -t qiime2.2024.10 /bin/bash
+# docker start qiime2.(version)
+# docker exec -i -t qiime2.(version) /bin/bash
 
 # change directory to your project folder beforehand
 
@@ -23,23 +26,24 @@
 # Quast et al. (2012). The SILVA ribosomal RNA gene database project: improved data processing and web-based tools.
 # Robeson et al. (2021). RESCRIPt: reproducible sequence taxonomy reference database management.
 
-# train a naive bayes classifier
-# do in a PC with a large computational power
-qiime feature-classifier fit-classifier-naive-bayes \
-    --i-reference-reads /data/SILVA_202410/silva-138-99-seqs-515-806.qza \
-    --i-reference-taxonomy /data/SILVA_202410/silva-138-99-tax-515-806.qza \
-    --o-classifier /data/SILVA_202410/silva-138-99-515-806-classifier_2410.qza
+# use pre-trained classifier from SILVA 2024.07 release
 
 qiime feature-classifier classify-sklearn \
-    --i-reads Analysis/denoised/rep-seqs_16S.qza \
-    --i-classifier /data/SILVA_202410/silva_2410_nb_classifier.qza \
-    --o-classification Analysis/taxa/classification_16S.qza
+  --i-classifier classifiers/silva-138-99-nb-diverse-weighted-classifier.qza \
+  --i-reads Analysis/merge/seq_16S_ms2.qza \
+  --o-classification Analysis/taxa/classification_16S.qza
+
+qiime feature-table tabulate-seqs \
+  --i-data Analysis/merge/seq_16S_ms2.qza \
+  --i-taxonomy Analysis/taxa/classification_16S.qza \
+  --m-metadata-file Analysis/merge/asv-frequencies_16S_ms2.qza \
+  --o-visualization Analysis/taxa/classification_16S.qzv
 
 #barplot
 qiime taxa barplot \
-    --i-table Analysis/denoised/table_16S.qza \
-    --i-taxonomy Analysis/taxa/classification_16S.qza \
-    --o-visualization Analysis/taxa/taxa_barplot_16S.qzv
+  --i-table Analysis/merge/table_16S_ms2.qza \
+  --i-taxonomy Analysis/taxa/classification_16S.qza \
+  --o-visualization Analysis/taxa/barplots_16S_ms2.qzv
 
 #contami除去
 #mkdir Analysis/NoContam

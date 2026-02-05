@@ -10,6 +10,7 @@ HN00265605.zip
 raw_data/*
 # ignore heavy data files
 Analysis/demux/*
+classifiers/*
 
 # ignore log files
 log/*.log
