@@ -1,23 +1,23 @@
-#assign taxonomy to ASVs
+# assign taxonomy to ASVs
 
-##start docker container first
-#docker start qiime2.2024.02
-#docker exec -i -t qiime2.2024.02 /bin/bash
+## start docker container first
+# docker start qiime2.(version)
+# docker exec -i -t qiime2.(version) /bin/bash
 
-#change directory to your project folder beforehead
+# change directory to your project folder beforehand
 
-#use UNITE database
+# use UNITE database
 
-#Bokulich et al. (2018). Optimizing taxonomic classification of marker-gene amplicon sequences with QIIME 2’s q2-feature-classifier plugin.
-#Abarenkov et al. (2024). The UNITE database for molecular identification and taxonomic communication of fungi and other eukaryotes: sequences, taxa and classifications reconsidered.
-#10.15156/BIO/2959338
+# Bokulich et al. (2018). Optimizing taxonomic classification of marker-gene amplicon sequences with QIIME 2’s q2-feature-classifier plugin.
+# Abarenkov et al. (2024). The UNITE database for molecular identification and taxonomic communication of fungi and other eukaryotes: sequences, taxa and classifications reconsidered.
+# 10.15156/BIO/2959338
 
-#make dir
-#mkdir ../UNITE_all_20240404
+# make dir
+# mkdir ../UNITE_all_20240404
 
-#use qiime2.2024.10 to use scikit-sklearn v 1
-#docker start qiime2.2024.10
-#docker exec -i -t qiime2.2024.10 /bin/bash
+# use qiime2.(version) to use scikit-sklearn v 1
+# docker start qiime2.(version)
+# docker exec -i -t qiime2.(version) /bin/bash
 
 #import repseqs and taxonomy file
 qiime tools import \

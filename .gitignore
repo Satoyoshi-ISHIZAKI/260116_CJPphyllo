@@ -11,6 +11,7 @@ raw_data/*
 # ignore heavy data files
 Analysis/demux/*
 classifiers/*
+Analysis/*
 
 # ignore log files
 log/*.log

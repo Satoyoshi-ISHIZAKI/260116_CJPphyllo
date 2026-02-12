@@ -24,3 +24,7 @@
 wget https://data.qiime2.org/classifiers/sklearn-1.4.2/silva/silva-138-99-nb-diverse-weighted-classifier.qza -O classifiers/silva-138-99-nb-diverse-weighted-classifier.qza
 
 # UNITE classifier
+# download pre-trained classifier for ITS sequences (UNITE, dynamic identity levels, all eukaryotes)
+# One of the QIIME2 developers, Colin J. Brislawn, has trained a UNITE classifier for QIIME2 that is available for download. This classifier is based on the UNITE database and is designed for classifying ITS sequences. It is regularly updated to reflect the latest taxonomy and sequence data in the UNITE database.
+# see https://github.com/colinbrislawn/unite-train/releases
+wget https://github.com/colinbrislawn/unite-train/releases/download/v10.0-2025-02-19-qiime2-2026.1/unite_ver2025-02-19_dynamic_eukaryotes-Q2-2026.1.qza -O classifiers/unite_ver2025-02-19_dynamic_eukaryotes-Q2-2026.1.qza
