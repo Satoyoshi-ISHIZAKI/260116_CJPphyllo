@@ -1,5 +1,0 @@
-rep-seqs_ITS_single.qza: OK
-table_16S.qza: OK
-table_ITS_single.qza: OK
-denoising-stats_16S.qza: OK
-denoising-stats_ITS_single.qza: OK

@@ -1,6 +1,0 @@
-﻿87c6087ed2429315a2983a139820e2cd  rep-seqs_16S.qza
-453ad814c7328169ea8ed635e7cd4c6f  rep-seqs_ITS_single.qza
-ac9bbb2a623f84ac08b35434acd44e28  table_16S.qza
-6d4f411aa05b785ec3601db9fd492cc3  table_ITS_single.qza
-95ba6ef9f1a176dfe5ca4596da5f81c2  denoising-stats_16S.qza
-4a3c7fdf6376202ac0d0f6017472605a  denoising-stats_ITS_single.qza
