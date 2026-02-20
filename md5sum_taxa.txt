@@ -1,0 +1,6 @@
+5c0d202dcc733ba472b51b0f269aff61  Analysis/taxa/barplots_16S_ms2.qzv
+f07f377ddcd7838db61916959f90480d  Analysis/taxa/barplots_ITS_ms2.qzv
+d43014e837f28c064d0fd1c3a5a4a222  Analysis/taxa/classification_16S.qza
+20292b6315e65cc6064ac67bb09bd037  Analysis/taxa/classification_16S.qzv
+6f14b935df3f04f8ce320a6cd6cf5fa7  Analysis/taxa/classification_ITS.qza
+9b4dcbdd931f6461184fb00889ee7455  Analysis/taxa/classification_ITS.qzv
