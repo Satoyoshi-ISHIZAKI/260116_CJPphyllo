@@ -72,22 +72,30 @@ qiime taxa barplot \
 # Yet To be done
 # filter out ASVs that were not assigned to the kingdom "Fungi"
 qiime taxa filter-table \
-    --i-table Analysis/denoised/table_ITS.qza \
+    --i-table Analysis/merge/table_ITS_ms2.qza \
     --i-taxonomy Analysis/taxa/classification_ITS.qza \
     --p-include k__Fungi \
-    --o-filtered-table Analysis/NoContam/table-no-contam_ITS.qza
+    --o-filtered-table Analysis/NoContam/table_ITS_nocontam.qza
 
 qiime taxa filter-seqs \
-    --i-sequences Analysis/denoised/rep-seqs_ITS.qza \
+    --i-sequences Analysis/merge/seq_ITS_ms2.qza \
     --i-taxonomy Analysis/taxa/classification_ITS.qza \
     --p-include k__Fungi \
-    --o-filtered-sequences Analysis/NoContam/seq-no-contam_ITS.qza
-
-qiime feature-table tabulate-seqs \
-    --i-data Analysis/NoContam/seq-no-contam_ITS.qza \
-    --o-visualization Analysis/NoContam/seq-no-contam_ITS.qzv
+    --o-filtered-sequences Analysis/NoContam/seq_ITS_nocontam.qza
 
 qiime taxa barplot \
-    --i-table Analysis/NoContam/table-no-contam_ITS.qza \
+    --i-table Analysis/NoContam/table_ITS_nocontam.qza \
     --i-taxonomy Analysis/taxa/classification_ITS.qza \
-    --o-visualization Analysis/NoContam/taxa_barplot_ITS.qzv
+    --o-visualization Analysis/NoContam/barplots_ITS_nocontam.qzv
+
+# summary
+qiime feature-table summarize \
+  --i-table Analysis/NoContam/table_ITS_nocontam.qza \
+  --o-summary Analysis/NoContam/table_ITS_nocontam.qzv \
+  --o-sample-frequencies Analysis/NoContam/sample-frequencies_ITS_nocontam.qza \
+  --o-feature-frequencies Analysis/NoContam/asv-frequencies_ITS_nocontam.qza
+
+qiime feature-table tabulate-seqs \
+  --i-data Analysis/NoContam/seq_ITS_nocontam.qza \
+  --m-metadata-file Analysis/NoContam/asv-frequencies_ITS_nocontam.qza \
+  --o-visualization Analysis/NoContam/seq_ITS_nocontam.qzv

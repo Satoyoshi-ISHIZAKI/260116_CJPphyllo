@@ -49,58 +49,30 @@ qiime taxa barplot \
 #mkdir Analysis/NoContam
 
 qiime taxa filter-table \
-    --i-table Analysis/denoised/table_16S.qza \
+    --i-table Analysis/merge/table_16S_ms2.qza \
     --i-taxonomy Analysis/taxa/classification_16S.qza \
     --p-exclude mitochondria,chloroplast,Unassigned,d__Eukaryota \
-    --o-filtered-table Analysis/NoContam/table-no-contam_16S.qza
+    --o-filtered-table Analysis/NoContam/table_16S_nocontam.qza
 
 qiime taxa filter-seqs \
-    --i-sequences Analysis/denoised/rep-seqs_16S.qza \
+    --i-sequences Analysis/merge/seq_16S_ms2.qza \
     --i-taxonomy Analysis/taxa/classification_16S.qza \
     --p-exclude mitochondria,chloroplast,Unassigned,d__Eukaryota \
-    --o-filtered-sequences Analysis/NoContam/seq-no-contam_16S.qza
+    --o-filtered-sequences Analysis/NoContam/seq_16S_nocontam.qza
+
+qiime taxa barplot \
+    --i-table Analysis/NoContam/table_16S_nocontam.qza \
+    --i-taxonomy Analysis/taxa/classification_16S.qza \
+    --o-visualization Analysis/NoContam/barplots_16S_nocontam.qzv
+
+# summary
+qiime feature-table summarize \
+  --i-table Analysis/NoContam/table_16S_nocontam.qza \
+  --o-summary Analysis/NoContam/table_16S_nocontam.qzv \
+  --o-sample-frequencies Analysis/NoContam/sample-frequencies_16S_nocontam.qza \
+  --o-feature-frequencies Analysis/NoContam/asv-frequencies_16S_nocontam.qza
 
 qiime feature-table tabulate-seqs \
-    --i-data Analysis/NoContam/seq-no-contam_16S.qza \
-    --o-visualization Analysis/NoContam/seq-no-contam_16S.qzv
-
-qiime taxa barplot \
-    --i-table Analysis/NoContam/table-no-contam_16S.qza \
-    --i-taxonomy Analysis/taxa/classification_16S.qza \
-    --o-visualization Analysis/NoContam/taxa_barplot_16S.qzv
-
-
-
-#use reads with longer downstream cutoffs
-qiime feature-classifier classify-sklearn \
-    --i-reads Analysis/denoised/rep-seqs_16S_tr.qza \
-    --i-classifier /data/SILVA_202410/silva_2410_nb_classifier.qza \
-    --o-classification Analysis/taxa/classification_16S_tr.qza
-
-#barplot
-qiime taxa barplot \
-    --i-table Analysis/denoised/table_16S_tr.qza \
-    --i-taxonomy Analysis/taxa/classification_16S_tr.qza \
-    --o-visualization Analysis/taxa/taxa_barplot_16S_tr.qzv
-
-#contami除去
-#mkdir Analysis/NoContam
-
-qiime taxa filter-table \
-    --i-table Analysis/denoised/table_16S_tr.qza \
-    --i-taxonomy Analysis/taxa/classification_16S_tr.qza \
-    --p-exclude mitochondria,chloroplast,Unassigned,d__Eukaryota \
-    --p-include d__Bacteria \
-    --o-filtered-table Analysis/NoContam/table-no-contam_16S_tr.qza
-
-qiime taxa filter-seqs \
-    --i-sequences Analysis/denoised/rep-seqs_16S_tr.qza \
-    --i-taxonomy Analysis/taxa/classification_16S_tr.qza \
-    --p-exclude mitochondria,chloroplast,Unassigned,d__Eukaryota \
-    --p-include d__Bacteria \
-    --o-filtered-sequences Analysis/NoContam/seq-no-contam_16S_tr.qza
-
-qiime taxa barplot \
-    --i-table Analysis/NoContam/table-no-contam_16S_tr.qza \
-    --i-taxonomy Analysis/taxa/classification_16S_tr.qza \
-    --o-visualization Analysis/NoContam/taxa_barplot_16S_tr.qzv
+  --i-data Analysis/NoContam/seq_16S_nocontam.qza \
+  --m-metadata-file Analysis/NoContam/asv-frequencies_16S_nocontam.qza \
+  --o-visualization Analysis/NoContam/seq_16S_nocontam.qzv

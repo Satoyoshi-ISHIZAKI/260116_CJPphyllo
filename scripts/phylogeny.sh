@@ -1,13 +1,12 @@
-#draw phylogenetic trees
+# draw phylogenetic trees
 
-##start docker container first
-#docker start qiime2.2024.02
-#docker exec -i -t qiime2.2024.02 /bin/bash
+## start docker container first
+# docker start qiime2.(version)
+# docker exec -i -t qiime2.(version) /bin/bash
 
-#mkdir Analysis/phylogeny
+# mkdir Analysis/phylogeny
 
-##16S
-#use dada2 outputs with the longer downstream truncation (tr)
+## 16S
 qiime alignment mafft \
     --i-sequences Analysis/NoContam/seq-no-contam_16S_tr.qza \
     --o-alignment Analysis/phylogeny/seqs_nocontam_16S_aligned.qza

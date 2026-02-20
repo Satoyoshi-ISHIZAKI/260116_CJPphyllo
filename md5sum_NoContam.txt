@@ -1,0 +1,14 @@
+a3b20861c84224e90617d443349a61d6  Analysis/NoContam/asv-frequencies_16S_nocontam.qza
+09e9bf9f5517bb57fcacd9c5b8dc266a  Analysis/NoContam/asv-frequencies_ITS_nocontam.qza
+050c0f6691b51fdb147b8a8a30cc8838  Analysis/NoContam/barplots_16S_nocontam.qzv
+0110ab0d8ed7d79c92d6a6d15d2a649e  Analysis/NoContam/barplots_ITS_nocontam.qzv
+e0a29f41d18bc6dedf6f124cca7ac77f  Analysis/NoContam/sample-frequencies_16S_nocontam.qza
+143680b9696181d8c6bf65b899515eb9  Analysis/NoContam/sample-frequencies_ITS_nocontam.qza
+85d94fb14f92f9d5bf19add2d1c84b60  Analysis/NoContam/seq_16S_nocontam.qza
+716ca29be2028c35c973caa373c01807  Analysis/NoContam/seq_16S_nocontam.qzv
+239210594e1f00fbcf5f0446de22e1ab  Analysis/NoContam/seq_ITS_nocontam.qza
+37812aacdcc32364136a512f04cfc05d  Analysis/NoContam/seq_ITS_nocontam.qzv
+bfcff6450c2774d05687d8eeac95e6f0  Analysis/NoContam/table_16S_nocontam.qza
+de74fb940dd0d0772cf197d00e237ce4  Analysis/NoContam/table_16S_nocontam.qzv
+76452fe6379038c4864cf9d7012f8c83  Analysis/NoContam/table_ITS_nocontam.qza
+21556ec94c9dca17e06374a00b6a743e  Analysis/NoContam/table_ITS_nocontam.qzv
