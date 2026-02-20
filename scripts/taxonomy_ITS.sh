@@ -28,7 +28,6 @@
 # docker exec -i -t qiime2.(version) /bin/bash
 
 ## previous code
-
 ### make dir
 ### mkdir ../UNITE_all_20240404
 
@@ -44,14 +43,17 @@
 #   --input-path /data/sh_qiime_release_all_04.04.2024/developer/sh_taxonomy_qiime_ver10_dynamic_all_04.04.2024_dev.txt \
 #   --output-path /data/UNITE_all_20240404/unite_taxonomy_240404.qza
 
-#train classifier
+# train classifier
 # qiime feature-classifier fit-classifier-naive-bayes \
 #   --i-reference-reads /data/UNITE_all_20240404/unite_refseqs_240404.qza \
 #   --i-reference-taxonomy /data/UNITE_all_20240404/unite_taxonomy_240404.qza \
 #   --o-classifier /data/UNITE_all_20240404/unite_2404_nb_classifier.qza
 
 ## current code
-#assign taxonomy to ASVs
+
+# use pre-trained classifier from UNITE 2025.02 release, distributed by Colin J. Brislawn, one of the QIIME2 developers.
+
+# assign taxonomy to ASVs
 qiime feature-classifier classify-sklearn \
   --i-classifier classifiers/unite_ver2025-02-19_dynamic_eukaryotes-Q2-2026.1.qza \
   --i-reads Analysis/merge/seq_ITS_ms2.qza \
@@ -69,7 +71,6 @@ qiime taxa barplot \
   --i-taxonomy Analysis/taxa/classification_ITS.qza \
   --o-visualization Analysis/taxa/barplots_ITS_ms2.qzv
 
-# Yet To be done
 # filter out ASVs that were not assigned to the kingdom "Fungi"
 qiime taxa filter-table \
     --i-table Analysis/merge/table_ITS_ms2.qza \

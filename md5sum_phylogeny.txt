@@ -1,0 +1,8 @@
+847d72dfb19d8f6b50bf3d6818bd6305  Analysis/phylogeny/seqs_16S_nocontam_aligned.qza
+f76c1e827653fd45d7d415b5f73de7e4  Analysis/phylogeny/seqs_16S_nocontam_aligned_masked.qza
+4716a5f263891dfed9fff295c5a91c2b  Analysis/phylogeny/seqs_ITS_nocontam_aligned.qza
+129b1a3df20cdd78a398a77fa5e2e96a  Analysis/phylogeny/seqs_ITS_nocontam_aligned_masked.qza
+3e333b7ef675c2e820e9fe4c5c620491  Analysis/phylogeny/tree_rooted_16S.qza
+64904d377509e2db71e90649c9d8bfe8  Analysis/phylogeny/tree_rooted_ITS.qza
+e31253765ad78b582103ea3aa4e829a4  Analysis/phylogeny/tree_unrooted_16S.qza
+32021454b8b3c9115e332c6a1ab1c410  Analysis/phylogeny/tree_unrooted_ITS.qza

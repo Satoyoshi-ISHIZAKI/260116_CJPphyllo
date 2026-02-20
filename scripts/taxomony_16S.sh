@@ -39,14 +39,14 @@ qiime feature-table tabulate-seqs \
   --m-metadata-file Analysis/merge/asv-frequencies_16S_ms2.qza \
   --o-visualization Analysis/taxa/classification_16S.qzv
 
-#barplot
+# barplot
 qiime taxa barplot \
   --i-table Analysis/merge/table_16S_ms2.qza \
   --i-taxonomy Analysis/taxa/classification_16S.qza \
   --o-visualization Analysis/taxa/barplots_16S_ms2.qzv
 
-#contami除去
-#mkdir Analysis/NoContam
+# filter out contaminations (mitochondria, chloroplast, unassigned, eukaryota) and make new files for phylogeny
+# mkdir Analysis/NoContam
 
 qiime taxa filter-table \
     --i-table Analysis/merge/table_16S_ms2.qza \
