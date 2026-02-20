@@ -1,0 +1,11 @@
+8277ed9e844a72d1162db2ee2e7c22ca  Analysis/denoised/231202/convert_md5_lowercase.py
+95ba6ef9f1a176dfe5ca4596da5f81c2  Analysis/denoised/231202/denoising-stats_16S.qza
+0a9ea0cf4cdf0e4043c0b18cc84b4000  Analysis/denoised/231202/denoising-stats_16S.qzv
+4a3c7fdf6376202ac0d0f6017472605a  Analysis/denoised/231202/denoising-stats_ITS_single.qza
+1672fff1f8d68784917b5b93b428403a  Analysis/denoised/231202/denoising-stats_ITS_single.qzv
+899fcd3b7f140031d87f4c925089492e  Analysis/denoised/231202/md5sums.txt
+87c6087ed2429315a2983a139820e2cd  Analysis/denoised/231202/rep-seqs_16S.qza
+453ad814c7328169ea8ed635e7cd4c6f  Analysis/denoised/231202/rep-seqs_ITS_single.qza
+f3a4b956c01be25fc4bd19c8cd59e9d5  Analysis/denoised/231202/res_md5sum_local.txt
+ac9bbb2a623f84ac08b35434acd44e28  Analysis/denoised/231202/table_16S.qza
+6d4f411aa05b785ec3601db9fd492cc3  Analysis/denoised/231202/table_ITS_single.qza
