@@ -1,0 +1,2 @@
+Analysis/demux/231202/trimmed_paired-end_ITS.qza: OK
+Analysis/demux/231202/trimmed_paired-end_ITS.qzv: OK
