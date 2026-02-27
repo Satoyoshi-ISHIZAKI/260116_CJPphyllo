@@ -100,3 +100,10 @@ qiime feature-table tabulate-seqs \
   --i-data Analysis/NoContam/seq_ITS_nocontam.qza \
   --m-metadata-file Analysis/NoContam/asv-frequencies_ITS_nocontam.qza \
   --o-visualization Analysis/NoContam/seq_ITS_nocontam.qzv
+
+qiime feature-table tabulate-seqs \
+  --i-data Analysis/NoContam/seq_ITS_nocontam.qza \
+  --i-taxonomy Analysis/taxa/classification_ITS.qza \
+  --m-metadata-file Analysis/NoContam/asv-frequencies_ITS_nocontam.qza \
+  --p-merge-method intersect \
+  --o-visualization Analysis/NoContam/seq_ITS_nocontam_taxa.qzv
