@@ -33,3 +33,11 @@ qiime phylogeny align-to-tree-mafft-fasttree \
   --o-masked-alignment Analysis/phylogeny/seqs_ITS_nocontam_aligned_masked.qza \
   --o-tree Analysis/phylogeny/tree_unrooted_ITS.qza \
   --o-rooted-tree Analysis/phylogeny/tree_rooted_ITS.qza
+
+### paired reads for ITS
+qiime phylogeny align-to-tree-mafft-fasttree \
+  --i-sequences Analysis/NoContam/seq_ITS_paired_nocontam.qza \
+  --o-alignment Analysis/phylogeny/seqs_ITS_paired_nocontam_aligned.qza \
+  --o-masked-alignment Analysis/phylogeny/seqs_ITS_paired_nocontam_aligned_masked.qza \
+  --o-tree Analysis/phylogeny/tree_unrooted_ITS_paired.qza \
+  --o-rooted-tree Analysis/phylogeny/tree_rooted_ITS_paired.qza
